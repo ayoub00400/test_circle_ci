@@ -15,7 +15,7 @@ Future<void> main(List<String> args) async {
   //   exit(1);
   // }
 
-  final endpoint = "https://minio.hader.online/";
+  final endpoint = "https://minio.hader.online";
   final bucket = "mobile";
   final accessKey = "hader";
   final secretKey = "Hader@123";
