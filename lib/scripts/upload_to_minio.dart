@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:minio/minio.dart';
 
@@ -21,8 +20,9 @@ Future<void> main(List<String> args) async {
   final bucket = "mobile";
   final accessKey = "hader";
   final secretKey = "Hader@123";
-  final filePath =
-      "build/app/outputs/apk/${appFlavor ?? "development"}/release/app-${appFlavor ?? "development"}-release.apk";
+  final filePath = "lib/scripts/readme.txt";
+  // final filePath =
+  //     "build/app/outputs/apk/${appFlavor ?? "development"}/release/app-${appFlavor ?? "development"}-release.apk";
 
   final file = File(filePath);
 
