@@ -30,9 +30,9 @@ jobs:
         # environment:
         # KEYSTORE_PATH: app/upload-keystore.jks
         command: |
-          echo "Building APK with keystore at $KEY_ALIAS pth= $KEYSTORE_PATH" 
+          echo "Uploading to Minio..." 
           flutter build apk --debug
-          flutter pub run lib/scripts/upload_to_minio.dart
+          flutter run lib/scripts/upload_to_minio.dart
 
 workflows:
   build:
