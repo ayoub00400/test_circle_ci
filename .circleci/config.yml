@@ -32,7 +32,7 @@ jobs:
         command: |
           echo "Building APK with keystore at $KEY_ALIAS pth= $KEYSTORE_PATH" 
           flutter build apk --debug
-          flutter pub run scripts/upload_to_minio.dart
+          flutter pub run lib/scripts/upload_to_minio.dart
 
 workflows:
   build:
