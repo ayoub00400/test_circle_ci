@@ -10,10 +10,10 @@ Future<void> main(List<String> args) async {
    * 
    */
 
-  if (args.length < 4) {
-    print('Usage: dart upload_to_minio.dart <endpoint> <bucket> <accessKey> <secretKey> <filePath>');
-    exit(1);
-  }
+  // if (args.length < 4) {
+  //   print('Usage: dart upload_to_minio.dart <endpoint> <bucket> <accessKey> <secretKey> <filePath>');
+  //   exit(1);
+  // }
 
   final endpoint = "https://minio.hader.online/";
   final bucket = "mobile";
