@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:flutter/services.dart';
 import 'package:minio/minio.dart';
 
 Future<void> main(List<String> args) async {
@@ -42,7 +41,7 @@ Future<void> main(List<String> args) async {
 
   print('Uploading $objectName to $bucket ...');
 
-  await minio.putObject(bucket, objectName, file.openRead().cast<Uint8List>());
+  await minio.putObject(bucket, objectName, file.readAsBytes().asStream());
 
   print('Upload successful!');
 }
