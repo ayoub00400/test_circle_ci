@@ -32,7 +32,7 @@ jobs:
         command: |
           echo "Uploading to Minio..." 
           flutter build apk --debug
-          flutter run lib/scripts/upload_to_minio.dart
+          dart run lib/scripts/upload_to_minio.dart
 
 workflows:
   build:
