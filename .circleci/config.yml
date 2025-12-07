@@ -12,14 +12,12 @@ jobs:
         command: |
           sudo apt-get update
           sudo apt-get install -y openjdk-21-jdk
-    # - run: 
-    #     name: Clean project
-    #     command: ./gradlew clean
-    - run:
-        name: "Decode KeyStore"
-        command: |
-          echo "$KEYSTORE_BASE64" |
-          base64 --decode > android/app/upload-keystore.jks
+
+    # - run:
+    #     name: "Decode KeyStore"
+    #     command: |
+    #       echo "$KEYSTORE_BASE64" |
+    #       base64 --decode > android/app/upload-keystore.jks
 
     - run:
         name: "Flutter Build APK"
@@ -29,15 +27,12 @@ jobs:
     - run:
 
         name: "Build APK"
-        environment:
-          KEYSTORE_PATH: app/upload-keystore.jks
+        # environment:
+        # KEYSTORE_PATH: app/upload-keystore.jks
         command: |
           echo "Building APK with keystore at $KEY_ALIAS pth= $KEYSTORE_PATH" 
-          flutter build apk --release
-
-    - store_artifacts:
-        path: build/app/outputs/flutter-apk/app-release.apk
-        destination: app-release.apk
+          flutter build apk --debug
+          flutter pub run scripts/upload_to_minio.dart
 
 workflows:
   build:
