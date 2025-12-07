@@ -15,7 +15,7 @@ Future<void> main(List<String> args) async {
   //   exit(1);
   // }
 
-  final endpoint = "https://minio.hader.online";
+  final endpoint = "minio.hader.online";
   final bucket = "mobile";
   final accessKey = "hader";
   final secretKey = "Hader@123";
@@ -34,7 +34,7 @@ Future<void> main(List<String> args) async {
     endPoint: endpoint,
     accessKey: accessKey,
     secretKey: secretKey,
-    useSSL: endpoint.startsWith('https'),
+    useSSL: true,
   );
 
   final objectName = file.uri.pathSegments.last;
