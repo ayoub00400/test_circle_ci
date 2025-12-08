@@ -15,10 +15,10 @@ Future<void> main(List<String> args) async {
   //   exit(1);
   // }
 
-  final endpoint = "minio.hader.online/api/v1";
+  final endpoint = "play.min.io";
   final bucket = "mobile";
-  final accessKey = "hader";
-  final secretKey = "Hader@123";
+  final accessKey = "Q3AM3UQ867SPQQA43P2F";
+  final secretKey = "zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG";
   final filePath = "lib/scripts/readme.txt";
   // final filePath =
   //     "build/app/outputs/apk/${appFlavor ?? "development"}/release/app-${appFlavor ?? "development"}-release.apk";
@@ -40,7 +40,7 @@ Future<void> main(List<String> args) async {
   final objectName = file.uri.pathSegments.last;
 
   print('Uploading $objectName to $bucket ...');
-
+  if (!await minio.bucketExists(bucket)) minio.makeBucket(bucket);
   await minio.putObject(bucket, objectName, file.readAsBytes().asStream());
 
   print('Upload successful!');
